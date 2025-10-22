@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Dashboard - VCF Contacts</title>
+    <link rel="stylesheet" href="/static/admin.css" />
+  </head>
+  <body>
+    <div id="login-section">
+      <img
+        src="https://static.vecteezy.com/system/resources/previews/021/834/957/non_2x/contact-icon-in-gradient-colors-adress-book-or-phone-book-signs-illustration-png.png"
+        alt="Logo"
+        class="logo"
+      />
+      <h1>Admin Login</h1>
+      <input type="password" id="admin-pass" placeholder="Enter Password" />
+      <button onclick="login()">Login 🔑</button>
+    </div>
+
+    <div id="dashboard" class="container">
+      <img
+        src="https://static.vecteezy.com/system/resources/previews/021/834/957/non_2x/contact-icon-in-gradient-colors-adress-book-or-phone-book-signs-illustration-png.png"
+        alt="Logo"
+        class="logo"
+      />
+      <h1>Admin Dashboard</h1>
+
+      <section id="stats" class="stats">
+        <div>✅ Submitted Users: <span id="total">0</span> Users</div>
+        <div>🟢 Target: <span id="target">500</span> Users</div>
+      </section>
+
+      <div class="target-update">
+        <input
+          type="number"
+          id="new-target"
+          placeholder="Set new target (e.g., 1000 users)"
+        />
+        <button onclick="updateTarget()">Update Target ⚙️</button>
+      </div>
+
+      <div class="prefix-section">
+        <input type="text" id="name-prefix" placeholder="e.g., ✅" />
+        <button onclick="updatePrefix()">Update Prefix</button>
+      </div>
+
+      <div class="table-container">
+        <table id="users-table">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Username</th>
+              <th>Phone Number</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+        <div class="pagination">
+          <button id="prev-page" onclick="changePage(-1)">⬅️ Previous</button>
+          <button id="next-page" onclick="changePage(1)">Next ➡️</button>
+        </div>
+      </div>
+
+      <button class="vcf-btn" onclick="generateVCF()">
+        📇 Generate VCF File
+      </button>
+      <button class="vcf-btn" onclick="clearContacts()">
+        🚮 Clear Contacts
+      </button>
+    </div>
+
+    <footer class="footer">XP Tools | FreenetHubz | 2025</footer>
+
+    <script src="/static/admin.js"></script>
+  </body>
+</html>
