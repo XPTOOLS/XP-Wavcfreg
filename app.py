@@ -5,7 +5,7 @@ from flask import Flask, request, jsonify, Response, send_from_directory
 app = Flask(__name__)
 
 # MongoDB connection
-MONGO_URI = os.environ.get('MONGO_URI', 'mongodb+srv://anonymousguywas:12345Trials@cluster0.t4nmrtp.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0')
+MONGO_URI = os.environ.get('MONGO_URI', '')
 client = pymongo.MongoClient(MONGO_URI)
 db = client['vcfdb']
 contacts_col = db['contacts']
@@ -103,4 +103,5 @@ def clear_contacts():
         return jsonify({'success': False, 'message': f'Error clearing contacts: {str(e)}'}), 500
 
 if __name__ == '__main__':
+
     app.run(debug=True, host='0.0.0.0', port=5000)
