@@ -1,4 +1,4 @@
-const ADMIN_PASSWORD = "admin123"; // Change this password here
+const ADMIN_PASSWORD = "xpadmin"; // Change this password here
 const dashboard = document.getElementById('dashboard');
 const loginSection = document.getElementById('login-section');
 const totalEl = document.getElementById('total');
